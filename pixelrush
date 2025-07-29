@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Mini Games Hub</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Mini Games Hub</h1>
+        <nav>
+            <button onclick="showSection('home')">Home</button>
+            <button onclick="showSection('tic-tac-toe')">Tic-Tac-Toe</button>
+            <button onclick="showSection('rps')">Rock Paper Scissors</button>
+            <button onclick="showSection('memory')">Memory Match</button>
+            <button onclick="showSection('guess')">Number Guess</button>
+        </nav>
+    </header>
+    <main>
+        <section id="home" class="active">
+            <h2>Welcome!</h2>
+            <p>Choose a game to play:</p>
+            <ul>
+                <li><button onclick="showSection('tic-tac-toe')">Tic-Tac-Toe</button></li>
+                <li><button onclick="showSection('rps')">Rock Paper Scissors</button></li>
+                <li><button onclick="showSection('memory')">Memory Match</button></li>
+                <li><button onclick="showSection('guess')">Number Guess</button></li>
+            </ul>
+        </section>
+        <section id="tic-tac-toe">
+            <h2>Tic-Tac-Toe</h2>
+            <div id="ttt-board" class="ttt-board"></div>
+            <p id="ttt-status"></p>
+            <button onclick="initTicTacToe()">Restart</button>
+        </section>
+        <section id="rps">
+            <h2>Rock Paper Scissors</h2>
+            <div id="rps-controls">
+                <button onclick="playRPS('Rock')">Rock</button>
+                <button onclick="playRPS('Paper')">Paper</button>
+                <button onclick="playRPS('Scissors')">Scissors</button>
+            </div>
+            <p id="rps-result"></p>
+        </section>
+        <section id="memory">
+            <h2>Memory Match</h2>
+            <div id="memory-board" class="memory-board"></div>
+            <p id="memory-status"></p>
+            <button onclick="initMemory()">Restart</button>
+        </section>
+        <section id="guess">
+            <h2>Number Guess</h2>
+            <p>Guess a number between 1 and 100!</p>
+            <input id="guess-input" type="number" min="1" max="100">
+            <button onclick="makeGuess()">Guess</button>
+            <p id="guess-status"></p>
+            <button onclick="initGuess()">Restart</button>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2025 Mini Games Hub</p>
+    </footer>
+    <script src="scripts.js"></script>
+</body>
+</html>
